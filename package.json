@@ -1,0 +1,69 @@
+{
+  "name": "adyros",
+  "version": "0.1.0",
+  "description": "SDK and CLI for Adyros: guarded agent wallets, Proof-of-Behavior logs, ERC-8004 Agent Check and a local skill scanner.",
+  "license": "MIT",
+  "homepage": "https://adyros.vercel.app/docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ADYROS/adyros-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ADYROS/adyros-sdk/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./scanner": {
+      "types": "./dist/scanner/scan.d.ts",
+      "import": "./dist/scanner/scan.js"
+    },
+    "./proof": {
+      "types": "./dist/proof.d.ts",
+      "import": "./dist/proof.js"
+    }
+  },
+  "bin": {
+    "adyros": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "ai-agents",
+    "erc-8004",
+    "x402",
+    "agent-wallet",
+    "skill-scanner",
+    "base",
+    "onchain"
+  ],
+  "peerDependencies": {
+    "viem": ">=2.20.0"
+  },
+  "peerDependenciesMeta": {
+    "viem": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "22.18.8",
+    "typescript": "5.9.3",
+    "viem": "2.37.9"
+  }
+}
