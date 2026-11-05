@@ -1,0 +1,21 @@
+# Copy to .github/workflows/scan-skills.yml in your agent's repository.
+# Fails the pull request when a skill is BLOCKED (exit 2). REVIEW (exit 1) is reported but allowed.
+name: scan skills
+on:
+  pull_request:
+    paths: ["skills/**"]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Adyros Skill Scanner
+        run: |
+          set +e
+          npx --yes github:ADYROS/adyros-sdk scan ./skills   # becomes `npx --yes adyros scan` once on npm
+          code=$?
+          if [ "$code" -eq 2 ]; then echo "::error::A skill was blocked by the Adyros scanner"; exit 1; fi
+          exit 0
