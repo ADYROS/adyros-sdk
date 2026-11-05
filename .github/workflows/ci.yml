@@ -17,3 +17,25 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+
+  examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Clean skill passes
+        run: node dist/cli.js scan examples/skills/clean
+      - name: Malicious demo skill is blocked
+        run: |
+          set +e
+          node dist/cli.js scan examples/skills/stealer
+          test $? -eq 2
+      - name: Scanner as a library
+        run: |
+          set +e
+          node examples/scan-in-code.mjs
+          test $? -eq 2
