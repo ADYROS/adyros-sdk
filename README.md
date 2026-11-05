@@ -11,6 +11,15 @@ SDK and CLI for [Adyros](https://adyros.vercel.app), a guarded home for onchain 
 
 Requires Node.js 18.17 or newer.
 
+## Install
+
+```bash
+npm install github:ADYROS/adyros-sdk     # now, straight from this repository
+npm install adyros                       # once it is published on npm
+```
+
+Installing from GitHub builds the package on install. Every `npx adyros …` below also works as `npx github:ADYROS/adyros-sdk …` today.
+
 ## CLI
 
 ```bash
@@ -60,12 +69,20 @@ const result = scanSkill([{ path: "SKILL.md", content }]);
 const proof = await verifyProof("<machine-id>");
 ```
 
+## Examples
+
+[`examples/`](examples) has runnable scripts: block risky skills in CI, log from inside a machine, check an agent before paying it, and verify a public proof.
+
 ## Develop
 
 ```bash
 npm install
 npm test
 ```
+
+## Security
+
+Found a vulnerability? Please report it privately, see [SECURITY.md](SECURITY.md).
 
 ## License
 
