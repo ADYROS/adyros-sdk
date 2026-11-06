@@ -4,5 +4,5 @@ contact_links:
     url: https://github.com/ADYROS/adyros-sdk/security/advisories/new
     about: Please report vulnerabilities privately, not as an issue.
   - name: Docs
-    url: https://adyros.vercel.app/docs
+    url: https://adyros.com/docs
     about: API, guarded wallet, Proof of Behavior and x402.

@@ -1,6 +1,6 @@
 # adyros
 
-SDK and CLI for [Adyros](https://adyros.vercel.app), a guarded home for onchain agents.
+SDK and CLI for [Adyros](https://adyros.com), a guarded home for onchain agents.
 
 [![ci](https://github.com/ADYROS/adyros-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/ADYROS/adyros-sdk/actions/workflows/ci.yml) ![license](https://img.shields.io/badge/license-MIT-black)
 

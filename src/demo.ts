@@ -92,5 +92,5 @@ export async function runDemo(opts: { heartbeatMinutes?: number; once?: boolean 
     const minutes = Math.round((Date.now() - started) / 60_000);
     void step("log", () => ady.log("heartbeat", `Starter agent alive for ${minutes} min`, { minutes, boots: state.boots }));
   }, every);
-  say(`heartbeat every ${every / 60_000} min. Proof: ${site ?? "https://adyros.vercel.app"}/proof/<this machine id>`);
+  say(`heartbeat every ${every / 60_000} min. Proof: ${site ?? "https://adyros.com"}/proof/<this machine id>`);
 }
