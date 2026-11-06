@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- `adyros demo`: a starter agent for Adyros machines. It logs its start, reads its guarded wallet, tries an unlimited token approval that the guard must refuse, scans a clean and a malicious sample skill, checks an agent before paying it, then keeps a heartbeat on the Proof-of-Behavior log. It never spends funds.
+- `runDemo()` exported for use in your own agents.
+
 ## 0.1.0
 
 First release.

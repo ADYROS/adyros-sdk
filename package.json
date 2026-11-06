@@ -1,6 +1,6 @@
 {
   "name": "adyros",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SDK and CLI for Adyros: guarded agent wallets, Proof-of-Behavior logs, ERC-8004 Agent Check and a local skill scanner.",
   "license": "MIT",
   "homepage": "https://adyros.vercel.app/docs",

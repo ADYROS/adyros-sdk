@@ -26,6 +26,7 @@ Installing from GitHub builds the package on install. Every `npx adyros …` bel
 npx adyros scan ./my-skill          # exit 2 = blocked, 1 = review, 0 = clean
 npx adyros check base:22            # Quick Check an ERC-8004 agent
 npx adyros proof <machine-id>       # verify a public Proof-of-Behavior log
+npx adyros demo                     # starter agent, inside an Adyros machine
 ```
 
 Add `--json` for machine-readable output, and `--site <url>` (or `ADYROS_SITE_URL`) to point at another Adyros deployment. Use the scanner in CI to block risky skills before they reach an agent.
