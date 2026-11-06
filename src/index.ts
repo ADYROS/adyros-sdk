@@ -13,6 +13,7 @@
 export { scanSkill, TEXT_FILE, type ScanResult, type Finding, type SkillFile } from "./scanner/scan.js";
 export { verifyProof, type ProofVerification } from "./proof.js";
 export { payX402 } from "./x402.js";
+export { runDemo } from "./demo.js";
 
 import { DEFAULT_SITE } from "./site.js";
 export { DEFAULT_SITE };

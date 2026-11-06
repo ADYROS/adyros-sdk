@@ -4,6 +4,7 @@ import { join, relative } from "node:path";
 import { scanSkill, TEXT_FILE, type SkillFile } from "./scanner/scan.js";
 import { verifyProof } from "./proof.js";
 import { Adyros, DEFAULT_SITE } from "./index.js";
+import { runDemo } from "./demo.js";
 
 const SKIP = /(^|[\\/])(node_modules|\.git|dist|build|\.next|vendor|__pycache__)([\\/]|$)/;
 const c = {
@@ -74,6 +75,7 @@ const HELP = `adyros — Adyros CLI
   adyros scan <path>            Scan a skill or plugin folder (offline). Exit 2 = blocked, 1 = review.
   adyros check <chain:id>       Quick Check an ERC-8004 agent, e.g. base:22
   adyros proof <machine-id>     Verify a public Proof-of-Behavior log and its anchors
+  adyros demo [--once]          Starter agent, inside an Adyros machine: logs, wallet guard, scan, check
 
 Options: --json   --site <url> (default ${DEFAULT_SITE})`;
 
@@ -88,6 +90,7 @@ async function main() {
     if (cmd === "scan" && arg) await scan(arg, json);
     else if (cmd === "check" && arg) await check(arg, site, json);
     else if (cmd === "proof" && arg) await proof(arg, site, json);
+    else if (cmd === "demo") await runDemo({ once: args.includes("--once") });
     else {
       console.log(HELP);
       if (cmd && cmd !== "help" && cmd !== "--help") process.exitCode = 64;
