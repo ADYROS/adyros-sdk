@@ -2,7 +2,7 @@
 
 SDK and CLI for [Adyros](https://adyros.com), a guarded home for onchain agents.
 
-[![ci](https://github.com/ADYROS/adyros-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/ADYROS/adyros-sdk/actions/workflows/ci.yml) ![license](https://img.shields.io/badge/license-MIT-black)
+[![npm](https://img.shields.io/npm/v/adyros?color=black)](https://www.npmjs.com/package/adyros) [![ci](https://github.com/ADYROS/adyros-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/ADYROS/adyros-sdk/actions/workflows/ci.yml) ![license](https://img.shields.io/badge/license-MIT-black)
 
 - **Guarded wallet**: agents spend through a policy wallet they never hold the key to.
 - **Proof of Behavior**: append-only, hash-chained action log, anchored on Base.
@@ -14,11 +14,10 @@ Requires Node.js 18.17 or newer.
 ## Install
 
 ```bash
-npm install github:ADYROS/adyros-sdk     # now, straight from this repository
-npm install adyros                       # once it is published on npm
+npm install adyros
 ```
 
-Installing from GitHub builds the package on install. Every `npx adyros …` below also works as `npx github:ADYROS/adyros-sdk …` today.
+Or run the CLI without installing: `npx adyros scan ./my-skill`.
 
 ## CLI
 
