@@ -15,7 +15,7 @@ jobs:
       - name: Adyros Skill Scanner
         run: |
           set +e
-          npx --yes github:ADYROS/adyros-sdk scan ./skills   # becomes `npx --yes adyros scan` once on npm
+          npx --yes adyros scan ./skills
           code=$?
           if [ "$code" -eq 2 ]; then echo "::error::A skill was blocked by the Adyros scanner"; exit 1; fi
           exit 0
