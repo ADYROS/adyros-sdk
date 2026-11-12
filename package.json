@@ -65,6 +65,6 @@
   "devDependencies": {
     "@types/node": "26.6.6",
     "typescript": "7.0.2",
-    "viem": "2.57.14"
+    "viem": "2.57.17"
   }
 }
